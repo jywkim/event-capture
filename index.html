@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Understanding JavaScript's Capture</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body class="bod">
 
@@ -13,51 +14,8 @@
       </div>
     </div>
 
-  <style>
-    html {
-      box-sizing: border-box;
-    }
-    *, *:before, *:after { box-sizing: inherit; }
+    <button></button>
 
-    div {
-      width:100%;
-      padding:100px;
-    }
-
-    .one {
-      background: thistle;
-    }
-
-    .two {
-      background:mistyrose;
-    }
-
-    .three {
-      background:coral;
-    }
-  </style>
-
-  <button></button>
-  <script>
-    const divs = document.querySelectorAll('div');
-    const button = document.querySelector('button');
-
-    function logText(e) {
-      console.log(this.classList.value);
-      // e.stopPropagation();
-      // console.log(this);
-    }
-
-    divs.forEach(div => div.addEventListener('click', logText, {
-      capture: false,
-      once: true
-    }));
-
-    button.addEventListener('click', () => {
-      console.log('Click');
-    }, {
-      once: true
-    });
-  </script>
+    <script src="event.js"></script>
   </body>
 </html>
